@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "It works on Railway!"}
+    return {"message": "It works on Railway!!"}
 
 
 app.add_middleware(
