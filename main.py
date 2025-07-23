@@ -1,12 +1,24 @@
+
 from fastapi import FastAPI
 import requests
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
+
 @app.get("/")
 def home():
     return {"message": "It works on Railway!"}
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://testingmarmorkrafts.store"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # For DEv
 WC_API_URL = "https://testingmarmorkrafts.store/wp-json/wc/v3"
