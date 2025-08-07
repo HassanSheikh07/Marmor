@@ -1,10 +1,9 @@
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 import requests
- 
-app = FastAPI() 
- 
 from bs4 import BeautifulSoup
+app = FastAPI() 
+
 def strip_html(html):
     return BeautifulSoup(html, "html.parser").get_text()
  
